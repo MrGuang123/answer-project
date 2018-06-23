@@ -1,11 +1,12 @@
 <template>
-  <div>我是结果页</div>
+  <div class="result">
+
+  </div>
 </template>
 <script>
-export default {
-
-}
+export default {}
 </script>
 <style lang="scss" scoped>
-
+.result {
+}
 </style>
