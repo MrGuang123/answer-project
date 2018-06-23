@@ -19,7 +19,7 @@
 export default {
   methods: {
     begin() {
-      this.$route.push({
+      this.$router.push({
         name: 'answer'
       })
     }
@@ -32,6 +32,18 @@ export default {
   min-height: 500px;
   display: flex;
   align-items: center;
+  color: #fff;
+  background: linear-gradient(
+      45deg,
+      #dca 12%,
+      transparent 0,
+      transparent 88%,
+      #dca 0
+    ),
+    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0)
+      #753;
+  background-size: 25px 25px;
   .inner {
     width: 300px;
     margin: 0 auto;
@@ -46,12 +58,15 @@ export default {
       background-size: 10px 10px;
       background-repeat: no-repeat;
       background-position: 5px 18px;
+      box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.5) inset;
     }
     .introduce {
       margin-bottom: 40px;
       li {
         line-height: 24px;
         padding-left: 10px;
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5) inset;
+        margin-top: 10px;
       }
     }
     .btn-group {
