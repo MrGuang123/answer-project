@@ -11,15 +11,15 @@ let http = axios.create({
 })
 
 // TODO:目前直接返回数据，没有处理
-function successHandle(response) {
+function successHandle (response) {
   return response
 }
 // TODO:没有根据错误编码进行处理，直接返回错误数据
-function errorHandle(err) {
+function errorHandle (err) {
   return Promise.reject(err)
 }
 
-function sendRequest(method, url, params) {
+function sendRequest (method, url, params) {
   let response = http({
     url: url,
     method: method,
@@ -29,10 +29,10 @@ function sendRequest(method, url, params) {
 }
 
 export default {
-  get(url, params) {
+  get (url, params) {
     return sendRequest('get', url, params)
   },
-  post(url, params) {
+  post (url, params) {
     return sendRequest('post', url, params)
   }
 }

@@ -1,25 +1,55 @@
 <template>
   <div class="answer-content">
     <div class="answer-box">
-      <span class="typeCont">{{questype}}</span>
-      <radioSelection></radioSelection>
+      <span class="typeCont">{{quesTypeText}}</span>
+      <radioSelection v-if="quesType == 'single_choice'" :radioData="questionData" v-on:transferAnswerData="getAnswerData"></radioSelection>
+      <MutliSelection v-if="quesType == 'multiple_choice'"></MutliSelection>
       <div class="btn">
         <button>下一题</button>
-        <button>提交</button>
+        <button @click="commitAnswer">提交</button>
       </div>
     </div>
   </div>
 </template>
 <script>
   import radioSelection from '../../components/radioSelection.vue'
+  import MutliSelection from '../../components/MutliSelection.vue'
+
   export default {
+    mounted: function () {
+      this.questionData = {
+        quesData: [{
+          'id': 0,
+          'option': '桉树',
+        }, {
+          'id': 1,
+          'option': '啥的',
+        }],
+        quesTitle: '阿斯顿发送到发送到'
+      }
+      this.quesType = "single_choice";
+      this.quesTypeText = '单选题';
+
+    },
     data() {
       return {
-        questype: '单选题'
+        quesType: '',
+        quesTypeText: '',
+        questionData: '',
+        answerData: ''
+      }
+    },
+    methods: {
+      getAnswerData(val) {
+        this.answerData = val;
+      },
+      commitAnswer: function () {
+        console.log("***commitAnswer***" + this.answerData);
       }
     },
     components: {
-      radioSelection
+      radioSelection,
+      MutliSelection
     }
   }
 </script>

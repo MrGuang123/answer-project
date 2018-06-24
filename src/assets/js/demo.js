@@ -1,7 +1,7 @@
 import http from './request'
 
 export default {
-  login(params) {
+  login (params) {
     return http.post('path/to/login', params)
   }
 }

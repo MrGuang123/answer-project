@@ -1,22 +1,28 @@
 <template>
   <div class="radio-box">
-    <p class="questText">{{radioTitle}}</p>
+    <p class="questText">{{radioData.quesTitle}}</p>
     <el-radio-group v-model="radio">
-      <el-radio :label="3">备选项</el-radio>
-      <el-radio :label="6">备选项</el-radio>
-      <el-radio :label="9">备选项</el-radio>
+      <el-radio v-for="item in radioData.quesData" :label="item.id" @change="radioChange">{{item.option}}</el-radio>
     </el-radio-group>
   </div>
 
 </template>
 <script>
+  import demo from '../assets/js/demo.js'
   export default {
     data() {
       return {
         radio: '',
-        radioTitle: "下列哪个样式定义后,内联(非块状)元素可以定义宽度和高度"
       };
-    }
+    },
+    props: ['radioData'],
+    methods: {
+      radioChange: function () {
+        console.log(this.radio);
+        this.$emit('transferAnswerData', this.radio);
+      }
+    },
+    mounted() {}
   }
 </script>
 <style>
@@ -28,7 +34,6 @@
   .el-radio__input.is-checked+.el-radio__label {
     color: green;
   }
-
 </style>
 
 <style scoped>

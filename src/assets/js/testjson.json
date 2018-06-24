@@ -1,0 +1,14 @@
+{
+  "result": {
+    "uid": 123,
+    "qtype": "judgment",
+    "judgment": {
+      "qid": 234,
+      "title": "PHP",
+      "subject": "",
+      "answer": null,
+      "analysis": null
+    }
+  },
+  "status": 0
+}
