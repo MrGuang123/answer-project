@@ -1,7 +1,7 @@
 <template>
   <div class="radio-box">
     <p class="questText">{{radioData.quesTitle}}</p>
-    <el-radio-group v-model="radio">
+    <el-radio-group v-model="radioData.radio">
       <el-radio v-for="item in radioData.quesData" :label="item.id" @change="radioChange">{{item.option}}</el-radio>
     </el-radio-group>
   </div>
@@ -12,17 +12,16 @@
   export default {
     data() {
       return {
-        radio: '',
+        // radio:this.radioData.radio,
       };
     },
     props: ['radioData'],
     methods: {
       radioChange: function () {
-        console.log(this.radio);
-        this.$emit('transferAnswerData', this.radio);
+        console.log(this.radioData.radio);
+        this.$emit('transferAnswerData', this.radioData.radio);
       }
-    },
-    mounted() {}
+    }
   }
 </script>
 <style>
@@ -31,7 +30,7 @@
     background: green;
   }
 
-  .el-radio__input.is-checked+.el-radio__label {
+  .radio-box .el-radio__input.is-checked+.el-radio__label {
     color: green;
   }
 </style>
