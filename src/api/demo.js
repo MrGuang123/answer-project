@@ -1,8 +1,11 @@
 import http from '../assets/js/request'
 
 export default {
-  login(params) {
-    return http.post('path/to/login', params)
+  // login (params) {
+  //   return http.post('path/to/login', params)
+  // }
+  getAnswer (params) {
+    return http.get('/exam/question/list', params)
   }
 }
 // 使用的时候import引入，import demo from 'path/to/demo'

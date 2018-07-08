@@ -14,9 +14,16 @@
 <script>
   import radioSelection from '../../components/radioSelection.vue'
   import MutliSelection from '../../components/MutliSelection.vue'
+  import demo from '../../api/demo.js';
 
   export default {
     mounted: function () {
+    demo.getAnswer().then(data =>{
+      console.log(1111111);
+      console.log(data);
+    })
+
+
       // this.questionData = {
       //   quesData: [{
       //     'id': 0,

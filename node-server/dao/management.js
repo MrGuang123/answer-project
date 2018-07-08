@@ -4,7 +4,7 @@ import http from '../middleware/request'
 // function getPulltopic
 
 export default {
-  getPulltopic() {
+  getPulltopic () {
     let params = {
       uid: 123,
       page: 1,

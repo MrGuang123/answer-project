@@ -1,0 +1,16 @@
+/a/b
+/c/d -> 组件 
+
+index.html -> js 服务跨域 
+
+nodeserver -> 服务
+
+
+一个服务器里 
+
+1.node服务器 app.js -> swig ->index.html
+
+/a/b -> /c/d (index.html)
+
+node       www.yideng.com -> 
+index.html www.yideng.com -> /a/b   
